@@ -1,0 +1,2 @@
+grubby --update-kernel=ALL --args="console=ttyS0"
+reboot

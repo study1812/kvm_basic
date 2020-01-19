@@ -1,0 +1,7 @@
+/etc/libvirt/libvirtd.conf
+
+
+log_level = 3
+log_outputs="3:file:/var/log/libvirt/libvirtd.log"
+
+

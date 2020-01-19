@@ -1,0 +1,528 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用virt-manager安装虚拟机 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="virsh.html" />
+    
+    
+    <link rel="prev" href="kvm-install-3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    适合开发人员的kvm虚拟化入门课程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../pre-class.html">
+            
+                <a href="../pre-class.html">
+            
+                    
+                    第一章课前准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../env/soft.html">
+            
+                <a href="../env/soft.html">
+            
+                    
+                    软件准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="../env/vmware-net.html">
+            
+                <a href="../env/vmware-net.html">
+            
+                    
+                    初始化vmware网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="kvm-install.html">
+            
+                <a href="kvm-install.html">
+            
+                    
+                    在vmware中安装一个虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4" data-path="kvm-install-2.html">
+            
+                <a href="kvm-install-2.html">
+            
+                    
+                    为vmware中的虚拟机安装操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.5" data-path="init.html">
+            
+                <a href="init.html">
+            
+                    
+                    初始化你的学习环境并将它备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../c2.md">
+            
+                <span>
+            
+                    
+                    第二章kvm 安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="kvm-install-3.html">
+            
+                <a href="kvm-install-3.html">
+            
+                    
+                    安装kvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2.2" data-path="vm-install.html">
+            
+                <a href="vm-install.html">
+            
+                    
+                    使用virt-manager安装虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="virsh.html">
+            
+                <a href="virsh.html">
+            
+                    
+                    virsh 命令行设置自动补全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.4" data-path="resize-image.html">
+            
+                <a href="resize-image.html">
+            
+                    
+                    优化模板虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.5" data-path="test-template-vm.html">
+            
+                <a href="test-template-vm.html">
+            
+                    
+                    测试模板虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.6" data-path="virsh-createl.html">
+            
+                <a href="virsh-createl.html">
+            
+                    
+                    基于xml文件 使用 virsh 命令创建虚拟机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.6.1" data-path="template-v1-xml.html">
+            
+                <a href="template-v1-xml.html">
+            
+                    
+                    template-v1.xml 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.7" data-path="ip-config.html">
+            
+                <a href="ip-config.html">
+            
+                    
+                    在宿主机上配置kvm虚拟机ip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.8" data-path="growth.html">
+            
+                <a href="growth.html">
+            
+                    
+                    使虚拟机开启自动扩展文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.9" data-path="virsh-script.html">
+            
+                <a href="virsh-script.html">
+            
+                    
+                    方便创建虚拟机的脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.9.1" data-path="create_vm.sh.html">
+            
+                <a href="create_vm.sh.html">
+            
+                    
+                    create_vm.sh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.9.2" data-path="template.xml.html">
+            
+                <a href="template.xml.html">
+            
+                    
+                    template.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >使用virt-manager安装虚拟机</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x6CE8;&#x610F; &#x5982;&#x679C;&#x662F;&#x4F7F;&#x7528;yum &#x9700;&#x8981;&#x518D;&#x6B21;mount </p>
+<pre><code>mount /dev/cdrom  /mnt/
+</code></pre><h5 id="&#x4E0A;&#x4F20;iso-&#x955C;&#x50CF;&#x6587;&#x4EF6;&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;">&#x4E0A;&#x4F20;ISO &#x955C;&#x50CF;&#x6587;&#x4EF6;&#x5230;&#x6307;&#x5B9A;&#x76EE;&#x5F55;</h5>
+<p>&#x4F7F;&#x7528; Xftp  &#x4E0A;&#x4F20;ISO</p>
+<pre><code>cd /kvm/iso/
+</code></pre><pre><code>ls /kvm/iso
+</code></pre><h5 id="&#x542F;&#x52A8;virt-manager--&#x4ECE;-iso-&#x5B89;&#x88C5;&#x7B2C;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x673A;">&#x542F;&#x52A8;virt-manager  &#x4ECE; iso &#x5B89;&#x88C5;&#x7B2C;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x673A;</h5>
+<pre><code>&#x9009;&#x62E9; &#x7F51;&#x7EDC; br0 virtIO 
+&#x78C1;&#x76D8; qcow2 virtIO  &#x5927;&#x5C0F;3G
+&#x663E;&#x793A; vnc   ens-us
+&#x5F00;&#x59CB;&#x5B89;&#x88C5;
+</code></pre><p>&#x5B89;&#x88C5;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF; &#x6CE8;&#x610F;</p>
+<pre><code>&#x4F7F;&#x7528; &#x6807;&#x51C6;&#x5206;&#x533A; &#x6587;&#x4EF6;&#x7CFB;&#x7EDF; xfs &#x5168;&#x90E8;&#x7ED9;&#x6839;&#x5206;&#x533A;  /
+
+&#x6807;&#x51C6;&#x5206;&#x533A; 
+/ 3G  xfs
+&#x6CA1;&#x6709;  swap
+&#x6CA1;&#x6709;  boot
+</code></pre><p>&#x865A;&#x62DF;&#x673A;&#x540D;&#x5B57;</p>
+<pre><code>CentOS-7-x86_64-1804
+</code></pre><p>&#x865A;&#x62DF;&#x78C1;&#x76D8;&#x540D;&#x5B57;</p>
+<pre><code>CentOS-7-x86_64-1804.qcow2
+</code></pre><p>&#x5173;&#x95ED;&#x865A;&#x62DF;&#x673A; &#x5907;&#x4EFD; &#x865A;&#x62DF;&#x78C1;&#x76D8;</p>
+<pre><code>cp /kvm/image/CentOS-7-x86_64-1804.qcow2   /kvm/image/CentOS-7-x86_64-1804.qcow2-bak
+</code></pre><p>&#x5907;&#x4EFD;&#x865A;&#x62DF;&#x673A; xml  &#x6587;&#x4EF6;</p>
+<pre><code>cp /etc/libvirt/qemu/CentOS-7-x86_64-1804.xml  /etc/libvirt/qemu/CentOS-7-x86_64-1804.xml-bak
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="kvm-install-3.html" class="navigation navigation-prev " aria-label="Previous page: 安装kvm">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="virsh.html" class="navigation navigation-next " aria-label="Next page: virsh 命令行设置自动补全">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用virt-manager安装虚拟机","level":"1.1.2.2","depth":3,"next":{"title":"virsh 命令行设置自动补全","level":"1.1.2.3","depth":3,"path":"kvm-install/virsh.md","ref":"kvm-install/virsh.md","articles":[]},"previous":{"title":"安装kvm","level":"1.1.2.1","depth":3,"path":"kvm-install/kvm-install-3.md","ref":"kvm-install/kvm-install-3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["search","-sharing","theme-default","lunr","fontsettings","copy-code-button","livereload","highlight","livereload"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"copy-code-button":{},"livereload":{},"highlight":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"kvm-install/vm-install.md","mtime":"2020-01-13T09:23:07.461Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T07:35:45.233Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

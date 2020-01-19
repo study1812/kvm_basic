@@ -1,0 +1,1 @@
+virsh domifaddr  domainname   --source agent

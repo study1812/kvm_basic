@@ -1,0 +1,25 @@
+{
+"plugins": [
+            "-search",
+            "-sharing",
+            "theme-default",
+            "-lunr",
+            "-fontsettings",
+            "livereload",
+	    "popup",
+	    "splitter",
+	    "copy-code-button",
+            "-highlight",
+	    "expandable-chapters-small",
+	    "chapter-fold",
+	    "back-to-top-button",
+	    "search-pro",
+            "expandable-chapters"
+],
+
+
+    "styles": {
+        "website": "styles/website.css"
+    }
+
+}

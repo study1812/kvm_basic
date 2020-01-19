@@ -1,0 +1,650 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基于xml文件 使用 virsh 命令创建虚拟机 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="template-v1-xml.html" />
+    
+    
+    <link rel="prev" href="test-template-vm.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    适合开发人员的kvm虚拟化入门课程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../pre-class.html">
+            
+                <a href="../pre-class.html">
+            
+                    
+                    第一章课前准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../env/soft.html">
+            
+                <a href="../env/soft.html">
+            
+                    
+                    软件准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="../env/vmware-net.html">
+            
+                <a href="../env/vmware-net.html">
+            
+                    
+                    初始化vmware网络
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="kvm-install.html">
+            
+                <a href="kvm-install.html">
+            
+                    
+                    在vmware中安装一个虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4" data-path="kvm-install-2.html">
+            
+                <a href="kvm-install-2.html">
+            
+                    
+                    为vmware中的虚拟机安装操作系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.5" data-path="init.html">
+            
+                <a href="init.html">
+            
+                    
+                    初始化你的学习环境并将它备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../c2.md">
+            
+                <span>
+            
+                    
+                    第二章kvm 安装
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="kvm-install-3.html">
+            
+                <a href="kvm-install-3.html">
+            
+                    
+                    安装kvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="vm-install.html">
+            
+                <a href="vm-install.html">
+            
+                    
+                    使用virt-manager安装虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.3" data-path="virsh.html">
+            
+                <a href="virsh.html">
+            
+                    
+                    virsh 命令行设置自动补全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.4" data-path="resize-image.html">
+            
+                <a href="resize-image.html">
+            
+                    
+                    优化模板虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.5" data-path="test-template-vm.html">
+            
+                <a href="test-template-vm.html">
+            
+                    
+                    测试模板虚拟机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.2.6" data-path="virsh-createl.html">
+            
+                <a href="virsh-createl.html">
+            
+                    
+                    基于xml文件 使用 virsh 命令创建虚拟机
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.6.1" data-path="template-v1-xml.html">
+            
+                <a href="template-v1-xml.html">
+            
+                    
+                    template-v1.xml 文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.7" data-path="ip-config.html">
+            
+                <a href="ip-config.html">
+            
+                    
+                    在宿主机上配置kvm虚拟机ip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.8" data-path="growth.html">
+            
+                <a href="growth.html">
+            
+                    
+                    使虚拟机开启自动扩展文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.9" data-path="virsh-script.html">
+            
+                <a href="virsh-script.html">
+            
+                    
+                    方便创建虚拟机的脚本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.9.1" data-path="create_vm.sh.html">
+            
+                <a href="create_vm.sh.html">
+            
+                    
+                    create_vm.sh
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.9.2" data-path="template.xml.html">
+            
+                <a href="template.xml.html">
+            
+                    
+                    template.xml
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >基于xml文件 使用 virsh 命令创建虚拟机</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x6E05;&#x7406;&#x73AF;&#x5883;">&#x6E05;&#x7406;&#x73AF;&#x5883;</h3>
+<p>&#x547D;&#x4EE4;&#x884C;&#x5220;&#x9664;&#x865A;&#x62DF;&#x673A;</p>
+<pre><code>virsh destroy    template-v1
+virsh undefine   template-v1
+virsh vol-delete template-v1.qcow2 --pool kvmimage
+</code></pre><h3 id="&#x67E5;&#x770B;&#x6A21;&#x677F;&#x865A;&#x62DF;&#x673A;xml-&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x67E5;&#x770B;&#x6A21;&#x677F;&#x865A;&#x62DF;&#x673A;xml &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<pre><code>cat /etc/libvirt/qemu/CentOS-7-x86_64-1804.xml
+&lt;!--
+WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT ARE LIKELY TO BE
+OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
+  virsh edit CentOS-7-x86_64-1804
+or other application using the libvirt API.
+--&gt;
+
+&lt;domain type=&apos;kvm&apos;&gt;
+  &lt;name&gt;CentOS-7-x86_64-1804&lt;/name&gt;
+  &lt;uuid&gt;8be1fff6-e74b-4213-a5df-5a7ea7a3328b&lt;/uuid&gt;
+  &lt;memory unit=&apos;KiB&apos;&gt;1048576&lt;/memory&gt;
+  &lt;currentMemory unit=&apos;KiB&apos;&gt;1048576&lt;/currentMemory&gt;
+  &lt;vcpu placement=&apos;static&apos;&gt;2&lt;/vcpu&gt;
+  &lt;os&gt;
+    &lt;type arch=&apos;x86_64&apos; machine=&apos;pc-i440fx-rhel7.0.0&apos;&gt;hvm&lt;/type&gt;
+    &lt;boot dev=&apos;hd&apos;/&gt;
+  &lt;/os&gt;
+  &lt;features&gt;
+    &lt;acpi/&gt;
+    &lt;apic/&gt;
+  &lt;/features&gt;
+  &lt;cpu mode=&apos;custom&apos; match=&apos;exact&apos; check=&apos;partial&apos;&gt;
+    &lt;model fallback=&apos;allow&apos;&gt;Haswell-noTSX&lt;/model&gt;
+  &lt;/cpu&gt;
+  &lt;clock offset=&apos;utc&apos;&gt;
+    &lt;timer name=&apos;rtc&apos; tickpolicy=&apos;catchup&apos;/&gt;
+    &lt;timer name=&apos;pit&apos; tickpolicy=&apos;delay&apos;/&gt;
+    &lt;timer name=&apos;hpet&apos; present=&apos;no&apos;/&gt;
+  &lt;/clock&gt;
+  &lt;on_poweroff&gt;destroy&lt;/on_poweroff&gt;
+  &lt;on_reboot&gt;restart&lt;/on_reboot&gt;
+  &lt;on_crash&gt;destroy&lt;/on_crash&gt;
+  &lt;pm&gt;
+    &lt;suspend-to-mem enabled=&apos;no&apos;/&gt;
+    &lt;suspend-to-disk enabled=&apos;no&apos;/&gt;
+  &lt;/pm&gt;
+  &lt;devices&gt;
+    &lt;emulator&gt;/usr/libexec/qemu-kvm&lt;/emulator&gt;
+    &lt;disk type=&apos;file&apos; device=&apos;disk&apos;&gt;
+      &lt;driver name=&apos;qemu&apos; type=&apos;qcow2&apos;/&gt;
+      &lt;source file=&apos;/kvm/image/CentOS-7-x86_64-1804.qcow2&apos;/&gt;
+      &lt;target dev=&apos;vda&apos; bus=&apos;virtio&apos;/&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x07&apos; function=&apos;0x0&apos;/&gt;
+    &lt;/disk&gt;
+    &lt;disk type=&apos;file&apos; device=&apos;cdrom&apos;&gt;
+      &lt;driver name=&apos;qemu&apos; type=&apos;raw&apos;/&gt;
+      &lt;target dev=&apos;hda&apos; bus=&apos;ide&apos;/&gt;
+      &lt;readonly/&gt;
+      &lt;address type=&apos;drive&apos; controller=&apos;0&apos; bus=&apos;0&apos; target=&apos;0&apos; unit=&apos;0&apos;/&gt;
+    &lt;/disk&gt;
+    &lt;controller type=&apos;usb&apos; index=&apos;0&apos; model=&apos;ich9-ehci1&apos;&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x05&apos; function=&apos;0x7&apos;/&gt;
+    &lt;/controller&gt;
+    &lt;controller type=&apos;usb&apos; index=&apos;0&apos; model=&apos;ich9-uhci1&apos;&gt;
+      &lt;master startport=&apos;0&apos;/&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x05&apos; function=&apos;0x0&apos; multifunction=&apos;on&apos;/&gt;
+    &lt;/controller&gt;
+    &lt;controller type=&apos;usb&apos; index=&apos;0&apos; model=&apos;ich9-uhci2&apos;&gt;
+      &lt;master startport=&apos;2&apos;/&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x05&apos; function=&apos;0x1&apos;/&gt;
+    &lt;/controller&gt;
+    &lt;controller type=&apos;usb&apos; index=&apos;0&apos; model=&apos;ich9-uhci3&apos;&gt;
+      &lt;master startport=&apos;4&apos;/&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x05&apos; function=&apos;0x2&apos;/&gt;
+    &lt;/controller&gt;
+    &lt;controller type=&apos;pci&apos; index=&apos;0&apos; model=&apos;pci-root&apos;/&gt;
+    &lt;controller type=&apos;ide&apos; index=&apos;0&apos;&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x01&apos; function=&apos;0x1&apos;/&gt;
+    &lt;/controller&gt;
+    &lt;controller type=&apos;virtio-serial&apos; index=&apos;0&apos;&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x06&apos; function=&apos;0x0&apos;/&gt;
+    &lt;/controller&gt;
+    &lt;interface type=&apos;network&apos;&gt;
+      &lt;mac address=&apos;52:54:00:d3:01:ac&apos;/&gt;
+      &lt;source network=&apos;br0&apos;/&gt;
+      &lt;model type=&apos;virtio&apos;/&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x03&apos; function=&apos;0x0&apos;/&gt;
+    &lt;/interface&gt;
+    &lt;serial type=&apos;pty&apos;&gt;
+      &lt;target type=&apos;isa-serial&apos; port=&apos;0&apos;&gt;
+        &lt;model name=&apos;isa-serial&apos;/&gt;
+      &lt;/target&gt;
+    &lt;/serial&gt;
+    &lt;console type=&apos;pty&apos;&gt;
+      &lt;target type=&apos;serial&apos; port=&apos;0&apos;/&gt;
+    &lt;/console&gt;
+    &lt;channel type=&apos;unix&apos;&gt;
+      &lt;target type=&apos;virtio&apos; name=&apos;org.qemu.guest_agent.0&apos;/&gt;
+      &lt;address type=&apos;virtio-serial&apos; controller=&apos;0&apos; bus=&apos;0&apos; port=&apos;1&apos;/&gt;
+    &lt;/channel&gt;
+    &lt;channel type=&apos;spicevmc&apos;&gt;
+      &lt;target type=&apos;virtio&apos; name=&apos;com.redhat.spice.0&apos;/&gt;
+      &lt;address type=&apos;virtio-serial&apos; controller=&apos;0&apos; bus=&apos;0&apos; port=&apos;2&apos;/&gt;
+    &lt;/channel&gt;
+    &lt;channel type=&apos;unix&apos;&gt;
+      &lt;target type=&apos;virtio&apos; name=&apos;org.qemu.guest_agent.0&apos;/&gt;
+      &lt;address type=&apos;virtio-serial&apos; controller=&apos;0&apos; bus=&apos;0&apos; port=&apos;3&apos;/&gt;
+    &lt;/channel&gt;
+    &lt;input type=&apos;tablet&apos; bus=&apos;usb&apos;&gt;
+      &lt;address type=&apos;usb&apos; bus=&apos;0&apos; port=&apos;1&apos;/&gt;
+    &lt;/input&gt;
+    &lt;input type=&apos;mouse&apos; bus=&apos;ps2&apos;/&gt;
+    &lt;input type=&apos;keyboard&apos; bus=&apos;ps2&apos;/&gt;
+    &lt;graphics type=&apos;vnc&apos; port=&apos;-1&apos; autoport=&apos;yes&apos; keymap=&apos;en-us&apos;&gt;
+      &lt;listen type=&apos;address&apos;/&gt;
+    &lt;/graphics&gt;
+    &lt;sound model=&apos;ich6&apos;&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x04&apos; function=&apos;0x0&apos;/&gt;
+    &lt;/sound&gt;
+    &lt;video&gt;
+      &lt;model type=&apos;qxl&apos; ram=&apos;65536&apos; vram=&apos;65536&apos; vgamem=&apos;16384&apos; heads=&apos;1&apos; primary=&apos;yes&apos;/&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x02&apos; function=&apos;0x0&apos;/&gt;
+    &lt;/video&gt;
+    &lt;redirdev bus=&apos;usb&apos; type=&apos;spicevmc&apos;&gt;
+      &lt;address type=&apos;usb&apos; bus=&apos;0&apos; port=&apos;2&apos;/&gt;
+    &lt;/redirdev&gt;
+    &lt;redirdev bus=&apos;usb&apos; type=&apos;spicevmc&apos;&gt;
+      &lt;address type=&apos;usb&apos; bus=&apos;0&apos; port=&apos;3&apos;/&gt;
+    &lt;/redirdev&gt;
+    &lt;memballoon model=&apos;virtio&apos;&gt;
+      &lt;address type=&apos;pci&apos; domain=&apos;0x0000&apos; bus=&apos;0x00&apos; slot=&apos;0x08&apos; function=&apos;0x0&apos;/&gt;
+    &lt;/memballoon&gt;
+  &lt;/devices&gt;
+&lt;/domain&gt;
+</code></pre><pre><code>cp  /etc/libvirt/qemu/CentOS-7-x86_64-1804.xml  /etc/libvirt/qemu/template-v1.xml
+</code></pre><pre><code>virsh vol-clone  CentOS-7-x86_64-1804.qcow2  --pool kvmimage template-v1.qcow2
+virsh  vol-resize  template-v1.qcow2 --pool kvmimage  --capacity 10G
+virsh  vol-info template-v1.qcow2 --pool kvmimage
+</code></pre><p>&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#x57FA;&#x672C;&#x5185;&#x5BB9;</p>
+<h5 id="&#x865A;&#x62DF;&#x673A;&#x540D;&#x5B57;">&#x865A;&#x62DF;&#x673A;&#x540D;&#x5B57;</h5>
+<pre><code>name   template-v1
+</code></pre><h5 id="&#x865A;&#x62DF;&#x673A;-uuid">&#x865A;&#x62DF;&#x673A; uuid</h5>
+<pre><code>uuid
+</code></pre><pre><code>uuidgen
+</code></pre><h5 id="&#x865A;&#x62DF;&#x673A;-&#x865A;&#x62DF;&#x78C1;&#x76D8;path">&#x865A;&#x62DF;&#x673A; &#x865A;&#x62DF;&#x78C1;&#x76D8;path</h5>
+<pre><code>&lt;source file=&apos;/kvm/image/template-v1.qcow2&apos;/&gt;
+</code></pre><h5 id="&#x865A;&#x62DF;&#x673A;&#x7F51;&#x5361;-mac-&#x5730;&#x5740;">&#x865A;&#x62DF;&#x673A;&#x7F51;&#x5361; mac &#x5730;&#x5740;</h5>
+<pre><code>      &lt;mac address=&apos;52:54:00:d3:01:ac&apos;/&gt;
+</code></pre><pre><code>echo &quot;52:54:$(dd if=/dev/urandom count=1 2&gt;/dev/null | md5sum | sed -r &apos;s/^(..)(..)(..)(..).*$/\1:\2:\3:\4/&apos;)&quot;
+</code></pre><pre><code>virsh  define /etc/libvirt/qemu/template-v1.xml 
+virsh   start template-v1
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="test-template-vm.html" class="navigation navigation-prev " aria-label="Previous page: 测试模板虚拟机">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="template-v1-xml.html" class="navigation navigation-next " aria-label="Next page: template-v1.xml 文件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基于xml文件 使用 virsh 命令创建虚拟机","level":"1.1.2.6","depth":3,"next":{"title":"template-v1.xml 文件","level":"1.1.2.6.1","depth":4,"path":"kvm-install/template-v1-xml.md","ref":"kvm-install/template-v1-xml.md","articles":[]},"previous":{"title":"测试模板虚拟机","level":"1.1.2.5","depth":3,"path":"kvm-install/test-template-vm.md","ref":"kvm-install/test-template-vm.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["search","-sharing","theme-default","lunr","fontsettings","copy-code-button","livereload","highlight","livereload"],"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"copy-code-button":{},"livereload":{},"highlight":{},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"kvm-install/virsh-createl.md","mtime":"2020-01-13T15:32:03.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T07:35:45.233Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+
+    </body>
+</html>
+

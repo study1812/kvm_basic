@@ -1,0 +1,18 @@
+chmod +x /etc/rc.d/rc.local
+
+growpart   /dev/vda 1 && partprobe  && xfs_growfs /dev/vda1
+
+
+
+
+
+虚拟磁盘
+virsh  vol-resize  test-1.qcow2 --pool kvmimage  --capacity 15G
+
+
+
+
+在线扩盘
+
+虚拟机
+virsh blockresize --path  /kvm/image/test2.qcow2   --size 15G   test2

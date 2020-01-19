@@ -1,0 +1,68 @@
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/chap-qemu_guest_agent
+
+### virt-manager  type
+
+yum install qemu-guest-agent
+systemctl start qemu-guest-agent
+systemctl enable qemu-guest-agent
+
+
+
+
+url-1
+
+https://blog.51cto.com/shyln/1890529
+
+
+
+https://blog.csdn.net/liukuan73/article/details/49048003
+
+
+
+<channel type="unix">
+  <source mode="bind"/>
+  <target type="virtio" name="org.qemu.guest_agent.0"/>
+</channel>
+
+
+
+
+mkdir -p /var/lib/libvirt/qemu/channel/target/
+chown root:qemu /var/lib/libvirt/qemu/channel/target/
+chmod 770 /var/lib/libvirt/qemu/channel/target/
+
+systemctl   enable    qemu-guest-agent
+
+
+[root@localhost qemu]# virsh set-user-password  172.16.99.203  root  654321
+Password set successfully for root in 172.16.99.203
+
+
+
+<console type='pty'>
+      <target type='serial' port='0'/>
+    </console>
+    <channel type='unix'>
+      <target type='virtio' name='org.qemu.guest_agent.0'/>
+      <address type='virtio-serial' controller='0' bus='0' port='1'/>
+    </channel>
+    <input type='tablet' bus='usb'>
+      <address type='usb' bus='0' port='1'/>
+    </input>
+
+
+
+https://www.cnblogs.com/fzxiaomange/p/kvm-inject.html
+
+
+/etc/sysconfig/qemu-ga
+
+
+只能动态的增加 不能动态的减少
+virsh setvcpus  172.16.99.203  4
+error: unsupported configuration: failed to find appropriate hotpluggable vcpus to reach the desired target vcpu count
+
+
+
+
+虚拟机agent 没有怎么办
